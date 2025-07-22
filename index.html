@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Setup Screen -->
+        <div id="setup-screen" class="screen active">
+            <div class="setup-card">
+                <h1>🧠 Quiz Master</h1>
+                <p>Test your knowledge with our interactive quiz!</p>
+                
+                <div class="setup-form">
+                    <label for="quiz-count">Number of questions:</label>
+                    <select id="quiz-count">
+                        <option value="5">5 Questions</option>
+                        <option value="10" selected>10 Questions</option>
+                        <option value="15">15 Questions</option>
+                        <option value="20">20 Questions</option>
+                        <option value="all">All Questions</option>
+                    </select>
+                    
+                    <button id="start-quiz" class="btn btn-primary">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-counter">Question 1 of 10</span>
+                    <div class="score-display">
+                        <span class="correct-count">✓ <span id="correct-count">0</span></span>
+                        <span class="wrong-count">✗ <span id="wrong-count">0</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="question-container">
+                    <h2 id="question-text">Loading question...</h2>
+                </div>
+                
+                <div class="options-container">
+                    <button class="option-btn" data-option="0">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Option A</span>
+                    </button>
+                    <button class="option-btn" data-option="1">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Option B</span>
+                    </button>
+                    <button class="option-btn" data-option="2">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Option C</span>
+                    </button>
+                    <button class="option-btn" data-option="3">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Option D</span>
+                    </button>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="next-question" class="btn btn-secondary" disabled>Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-card">
+                <h1>🎉 Quiz Complete!</h1>
+                <div class="final-score">
+                    <div class="score-circle">
+                        <span id="score-percentage">0%</span>
+                        <span class="score-label">Score</span>
+                    </div>
+                </div>
+                
+                <div class="score-breakdown">
+                    <div class="score-item correct">
+                        <span class="score-icon">✓</span>
+                        <span class="score-text">Correct: <span id="final-correct">0</span></span>
+                    </div>
+                    <div class="score-item wrong">
+                        <span class="score-icon">✗</span>
+                        <span class="score-text">Wrong: <span id="final-wrong">0</span></span>
+                    </div>
+                    <div class="score-item total">
+                        <span class="score-icon">📊</span>
+                        <span class="score-text">Total: <span id="final-total">0</span></span>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="restart-quiz" class="btn btn-primary">Take Quiz Again</button>
+                    <button id="new-quiz" class="btn btn-secondary">New Quiz Setup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
