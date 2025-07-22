@@ -23,106 +23,106 @@ class QuizApp {
         // Embed the biblical quiz data directly (from your sample-quiz.json)
         const sampleData = [
             {
-                "question": "Who built an ark to survive the flood?",
-                "options": [
-                    "Moses",
-                    "Noah",
-                    "Abraham",
-                    "David"
-                ],
-                "answer": 1
+              "question": "Who built an ark to survive the flood?",
+              "options": [
+                "Moses",
+                "Noah",
+                "Abraham",
+                "David"
+              ],
+              "answer": 1
             },
             {
-                "question": "Who led the Israelites out of Egypt?",
-                "options": [
-                    "Joseph",
-                    "Jacob",
-                    "Moses",
-                    "Joshua"
-                ],
-                "answer": 2
+              "question": "Who led the Israelites out of Egypt?",
+              "options": [
+                "Joseph",
+                "Jacob",
+                "Moses",
+                "Joshua"
+              ],
+              "answer": 2
             },
             {
-                "question": "What did God create on the first day?",
-                "options": [
-                    "Land",
-                    "Animals",
-                    "Light",
-                    "People"
-                ],
-                "answer": 2
+              "question": "What did God create on the first day?",
+              "options": [
+                "Land",
+                "Animals",
+                "Light",
+                "People"
+              ],
+              "answer": 2
             },
             {
-                "question": "What was the first man's name?",
-                "options": [
-                    "Noah",
-                    "Adam",
-                    "Seth",
-                    "Cain"
-                ],
-                "answer": 1
+              "question": "What was the first man's name?",
+              "options": [
+                "Noah",
+                "Adam",
+                "Seth",
+                "Cain"
+              ],
+              "answer": 1
             },
             {
-                "question": "What kind of fruit did Adam and Eve eat?",
-                "options": [
-                    "Banana",
-                    "Apple",
-                    "Fig",
-                    "Not specified"
-                ],
-                "answer": 3
+              "question": "What kind of fruit did Adam and Eve eat?",
+              "options": [
+                "Banana",
+                "Apple",
+                "Fig",
+                "Not specified"
+              ],
+              "answer": 3
             },
             {
-                "question": "Who was swallowed by a big fish?",
-                "options": [
-                    "Peter",
-                    "Jonah",
-                    "Paul",
-                    "Elijah"
-                ],
-                "answer": 1
+              "question": "Who was swallowed by a big fish?",
+              "options": [
+                "Peter",
+                "Jonah",
+                "Paul",
+                "Elijah"
+              ],
+              "answer": 1
             },
             {
-                "question": "Who received the Ten Commandments?",
-                "options": [
-                    "Abraham",
-                    "David",
-                    "Joshua",
-                    "Moses"
-                ],
-                "answer": 3
+              "question": "Who received the Ten Commandments?",
+              "options": [
+                "Abraham",
+                "David",
+                "Joshua",
+                "Moses"
+              ],
+              "answer": 3
             },
             {
-                "question": "What was the sign of God's covenant with Noah?",
-                "options": [
-                    "Fire",
-                    "Rainbow",
-                    "Star",
-                    "Mountain"
-                ],
-                "answer": 1
+              "question": "What was the sign of God's covenant with Noah?",
+              "options": [
+                "Fire",
+                "Rainbow",
+                "Star",
+                "Mountain"
+              ],
+              "answer": 1
             },
             {
-                "question": "Who was thrown into a den of lions?",
-                "options": [
-                    "Daniel",
-                    "David",
-                    "Elijah",
-                    "Samson"
-                ],
-                "answer": 0
+              "question": "Who was thrown into a den of lions?",
+              "options": [
+                "Daniel",
+                "David",
+                "Elijah",
+                "Samson"
+              ],
+              "answer": 0
             },
             {
-                "question": "What city did God destroy with fire and brimstone?",
-                "options": [
-                    "Babylon",
-                    "Nineveh",
-                    "Sodom",
-                    "Jericho"
-                ],
-                "answer": 2
+              "question": "What city did God destroy with fire and brimstone?",
+              "options": [
+                "Babylon",
+                "Nineveh",
+                "Sodom",
+                "Jericho"
+              ],
+              "answer": 2
             }
-        ];
+          ];
 
         // Convert 'answer' property to 'correct' for compatibility
         this.quizData = sampleData.map(question => ({
