@@ -433,4 +433,65 @@ body {
     .option-text {
         font-size: 0.9rem;
     }
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.footer-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feedback-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #667eea;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feedback-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.feedback-link:active {
+    transform: translateY(0);
+}
+
+/* Add bottom padding to container to account for footer */
+.container {
+    padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .feedback-link {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .container {
+        padding-bottom: 50px;
+    }
 } 
