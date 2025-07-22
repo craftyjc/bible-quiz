@@ -18,111 +18,511 @@ class QuizApp {
         this.loadSampleData(); // Load sample data from JSON file
     }
 
-    // Load sample quiz data
+        // Load sample quiz data
     loadSampleData() {
-        // Embed the biblical quiz data directly (from your sample-quiz.json)
+        // 100 Biblical quiz questions
         const sampleData = [
             {
-              "question": "Who built an ark to survive the flood?",
-              "options": [
-                "Moses",
-                "Noah",
-                "Abraham",
-                "David"
-              ],
-              "answer": 1
+                "question": "Who built an ark to survive the flood?",
+                "options": ["Moses", "Noah", "Abraham", "David"],
+                "answer": 1
             },
             {
-              "question": "Who led the Israelites out of Egypt?",
-              "options": [
-                "Joseph",
-                "Jacob",
-                "Moses",
-                "Joshua"
-              ],
-              "answer": 2
+                "question": "Who led the Israelites out of Egypt?",
+                "options": ["Joseph", "Jacob", "Moses", "Joshua"],
+                "answer": 2
             },
             {
-              "question": "What did God create on the first day?",
-              "options": [
-                "Land",
-                "Animals",
-                "Light",
-                "People"
-              ],
-              "answer": 2
+                "question": "What did God create on the first day?",
+                "options": ["Land", "Animals", "Light", "People"],
+                "answer": 2
             },
             {
-              "question": "What was the first man's name?",
-              "options": [
-                "Noah",
-                "Adam",
-                "Seth",
-                "Cain"
-              ],
-              "answer": 1
+                "question": "What was the first man's name?",
+                "options": ["Noah", "Adam", "Seth", "Cain"],
+                "answer": 1
             },
             {
-              "question": "What kind of fruit did Adam and Eve eat?",
-              "options": [
-                "Banana",
-                "Apple",
-                "Fig",
-                "Not specified"
-              ],
-              "answer": 3
+                "question": "What kind of fruit did Adam and Eve eat?",
+                "options": ["Banana", "Apple", "Fig", "Not specified"],
+                "answer": 3
             },
             {
-              "question": "Who was swallowed by a big fish?",
-              "options": [
-                "Peter",
-                "Jonah",
-                "Paul",
-                "Elijah"
-              ],
-              "answer": 1
+                "question": "Who was swallowed by a big fish?",
+                "options": ["Peter", "Jonah", "Paul", "Elijah"],
+                "answer": 1
             },
             {
-              "question": "Who received the Ten Commandments?",
-              "options": [
-                "Abraham",
-                "David",
-                "Joshua",
-                "Moses"
-              ],
-              "answer": 3
+                "question": "Who received the Ten Commandments?",
+                "options": ["Abraham", "David", "Joshua", "Moses"],
+                "answer": 3
             },
             {
-              "question": "What was the sign of God's covenant with Noah?",
-              "options": [
-                "Fire",
-                "Rainbow",
-                "Star",
-                "Mountain"
-              ],
-              "answer": 1
+                "question": "What was the sign of God's covenant with Noah?",
+                "options": ["Fire", "Rainbow", "Star", "Mountain"],
+                "answer": 1
             },
             {
-              "question": "Who was thrown into a den of lions?",
-              "options": [
-                "Daniel",
-                "David",
-                "Elijah",
-                "Samson"
-              ],
-              "answer": 0
+                "question": "Who was thrown into a den of lions?",
+                "options": ["Daniel", "David", "Elijah", "Samson"],
+                "answer": 0
             },
             {
-              "question": "What city did God destroy with fire and brimstone?",
-              "options": [
-                "Babylon",
-                "Nineveh",
-                "Sodom",
-                "Jericho"
-              ],
-              "answer": 2
+                "question": "What city did God destroy with fire and brimstone?",
+                "options": ["Babylon", "Nineveh", "Sodom", "Jericho"],
+                "answer": 2
+            },
+            {
+                "question": "Who was the strongest man in the Bible?",
+                "options": ["David", "Samson", "Saul", "Solomon"],
+                "answer": 1
+            },
+            {
+                "question": "Who was the first woman?",
+                "options": ["Ruth", "Sarah", "Eve", "Miriam"],
+                "answer": 2
+            },
+            {
+                "question": "What did God create on the seventh day?",
+                "options": ["Trees", "Man", "Rest", "Animals"],
+                "answer": 2
+            },
+            {
+                "question": "What river did the Israelites cross into the Promised Land?",
+                "options": ["Euphrates", "Nile", "Jordan", "Tigris"],
+                "answer": 2
+            },
+            {
+                "question": "Who interpreted Pharaoh's dreams?",
+                "options": ["Moses", "Joseph", "Aaron", "Daniel"],
+                "answer": 1
+            },
+            {
+                "question": "What food did God provide in the wilderness?",
+                "options": ["Quail", "Manna", "Bread", "All of the above"],
+                "answer": 3
+            },
+            {
+                "question": "Who was the mother of Samuel?",
+                "options": ["Sarah", "Rachel", "Hannah", "Leah"],
+                "answer": 2
+            },
+            {
+                "question": "What was David's job before he became king?",
+                "options": ["Fisherman", "Carpenter", "Shepherd", "Soldier"],
+                "answer": 2
+            },
+            {
+                "question": "How many days was the world created in?",
+                "options": ["6", "7", "8", "10"],
+                "answer": 0
+            },
+            {
+                "question": "Who fought Goliath?",
+                "options": ["Saul", "David", "Jonathan", "Solomon"],
+                "answer": 1
+            },
+            {
+                "question": "What did Moses part to escape Egypt?",
+                "options": ["Nile River", "Red Sea", "Jordan River", "Dead Sea"],
+                "answer": 1
+            },
+            {
+                "question": "What fell from heaven to feed the Israelites?",
+                "options": ["Corn", "Manna", "Bread", "Honey"],
+                "answer": 1
+            },
+            {
+                "question": "Who was Abraham's son?",
+                "options": ["Esau", "Isaac", "Jacob", "Joseph"],
+                "answer": 1
+            },
+            {
+                "question": "Who betrayed his brother for 20 pieces of silver?",
+                "options": ["Cain", "Esau", "Judah", "Joseph's brothers"],
+                "answer": 3
+            },
+            {
+                "question": "Who built the temple in Jerusalem?",
+                "options": ["Saul", "David", "Solomon", "Samuel"],
+                "answer": 2
+            },
+            {
+                "question": "Where was Jesus born?",
+                "options": ["Nazareth", "Bethlehem", "Jerusalem", "Galilee"],
+                "answer": 1
+            },
+            {
+                "question": "Who baptized Jesus?",
+                "options": ["Peter", "John the Baptist", "Paul", "James"],
+                "answer": 1
+            },
+            {
+                "question": "How many disciples did Jesus have?",
+                "options": ["10", "11", "12", "13"],
+                "answer": 2
+            },
+            {
+                "question": "What was Jesus' first miracle?",
+                "options": ["Healing the sick", "Feeding the 5,000", "Walking on water", "Turning water into wine"],
+                "answer": 3
+            },
+            {
+                "question": "Who was Jesus' mother?",
+                "options": ["Elizabeth", "Sarah", "Mary", "Martha"],
+                "answer": 2
+            },
+            {
+                "question": "Who betrayed Jesus for 30 pieces of silver?",
+                "options": ["Peter", "Judas", "Thomas", "James"],
+                "answer": 1
+            },
+            {
+                "question": "Who denied Jesus three times?",
+                "options": ["Judas", "Paul", "Peter", "John"],
+                "answer": 2
+            },
+            {
+                "question": "What did Jesus feed to 5,000 people?",
+                "options": ["Fish and grapes", "Bread and fish", "Loaves and honey", "Bread and lamb"],
+                "answer": 1
+            },
+            {
+                "question": "What did Jesus walk on?",
+                "options": ["Sand", "Clouds", "Water", "Air"],
+                "answer": 2
+            },
+            {
+                "question": "Who wrote most of the New Testament letters?",
+                "options": ["Peter", "John", "Paul", "Luke"],
+                "answer": 2
+            },
+            {
+                "question": "What was Jesus' job before ministry?",
+                "options": ["Fisherman", "Carpenter", "Teacher", "Shepherd"],
+                "answer": 1
+            },
+            {
+                "question": "Who was raised from the dead by Jesus?",
+                "options": ["John", "Lazarus", "Judas", "Peter"],
+                "answer": 1
+            },
+            {
+                "question": "What did Jesus ride into Jerusalem?",
+                "options": ["Camel", "Horse", "Donkey", "Cart"],
+                "answer": 2
+            },
+            {
+                "question": "What happened 3 days after Jesus died?",
+                "options": ["He rose again", "He was buried", "His tomb was sealed", "His body disappeared"],
+                "answer": 0
+            },
+            {
+                "question": "What is the shortest verse in the Bible?",
+                "options": ["Jesus loves you", "Jesus cried", "Jesus wept", "Jesus rose"],
+                "answer": 2
+            },
+            {
+                "question": "What did the disciples do at the Last Supper?",
+                "options": ["Sacrificed a lamb", "Fasted", "Prayed", "Ate bread and wine"],
+                "answer": 3
+            },
+            {
+                "question": "Who visited Jesus at his birth with gifts?",
+                "options": ["Angels", "Priests", "Three wise men", "Shepherds"],
+                "answer": 2
+            },
+            {
+                "question": "What did the devil tempt Jesus to turn into bread?",
+                "options": ["Sand", "Stone", "Clay", "Wood"],
+                "answer": 1
+            },
+            {
+                "question": "What did Jesus say is the greatest commandment?",
+                "options": ["Love yourself", "Love God", "Love money", "Obey the law"],
+                "answer": 1
+            },
+            {
+                "question": "Who climbed a tree to see Jesus?",
+                "options": ["Zacchaeus", "Peter", "Paul", "Nicodemus"],
+                "answer": 0
+            },
+            {
+                "question": "What parable tells of a son who ran away and returned?",
+                "options": ["The Lost Sheep", "The Good Samaritan", "The Talents", "The Prodigal Son"],
+                "answer": 3
+            },
+            {
+                "question": "Who was the Roman governor at Jesus' trial?",
+                "options": ["Herod", "Caesar", "Pontius Pilate", "Felix"],
+                "answer": 2
+            },
+            {
+                "question": "What book comes after the four Gospels?",
+                "options": ["Acts", "Romans", "Revelation", "Hebrews"],
+                "answer": 0
+            },
+            {
+                "question": "How did Jesus die?",
+                "options": ["Poison", "Sword", "Crucifixion", "Stoning"],
+                "answer": 2
+            },
+            {
+                "question": "Who found Jesus' tomb empty?",
+                "options": ["John", "Mary Magdalene", "Peter", "Paul"],
+                "answer": 1
+            },
+            {
+                "question": "Who was known for his wisdom?",
+                "options": ["Saul", "Solomon", "Samuel", "David"],
+                "answer": 1
+            },
+            {
+                "question": "What did David use to kill Goliath?",
+                "options": ["Sword", "Spear", "Sling and stone", "Bow"],
+                "answer": 2
+            },
+            {
+                "question": "What did God create Eve from?",
+                "options": ["Dust", "Water", "Rib", "Clay"],
+                "answer": 2
+            },
+            {
+                "question": "How many books are in the Bible?",
+                "options": ["60", "66", "70", "72"],
+                "answer": 1
+            },
+            {
+                "question": "Who was Jesus' earthly father?",
+                "options": ["Zechariah", "Joseph", "Simeon", "Jacob"],
+                "answer": 1
+            },
+            {
+                "question": "What bird did Noah send first?",
+                "options": ["Dove", "Raven", "Eagle", "Owl"],
+                "answer": 1
+            },
+            {
+                "question": "Who received a coat of many colors?",
+                "options": ["Jacob", "Esau", "Joseph", "Benjamin"],
+                "answer": 2
+            },
+            {
+                "question": "What was written on Jesus' cross?",
+                "options": ["King of the Jews", "Messiah", "Savior", "Lamb of God"],
+                "answer": 0
+            },
+            {
+                "question": "What city did Jesus grow up in?",
+                "options": ["Bethlehem", "Jerusalem", "Nazareth", "Capernaum"],
+                "answer": 2
+            },
+            {
+                "question": "What did Jesus say to calm the storm?",
+                "options": ["Peace, be still", "Do not fear", "Hush now", "Silence"],
+                "answer": 0
+            },
+            {
+                "question": "What's the last book of the Bible?",
+                "options": ["Acts", "Jude", "Revelation", "Malachi"],
+                "answer": 2
+            },
+            {
+                "question": "Who was turned into a pillar of salt?",
+                "options": ["Lot's wife", "Ruth", "Sarah", "Esther"],
+                "answer": 0
+            },
+            {
+                "question": "What did Elijah go up to heaven in?",
+                "options": ["Chariot of gold", "Chariot of fire", "Cloud", "Light"],
+                "answer": 1
+            },
+            {
+                "question": "How many days did Jesus fast?",
+                "options": ["10", "30", "40", "50"],
+                "answer": 2
+            },
+            {
+                "question": "What is the root of all evil?",
+                "options": ["Pride", "Money", "Love of money", "Greed"],
+                "answer": 2
+            },
+            {
+                "question": "What does 'Emmanuel' mean?",
+                "options": ["Savior", "God with us", "King of Kings", "Messenger"],
+                "answer": 1
+            },
+            {
+                "question": "Who was the first king of Israel?",
+                "options": ["Saul", "David", "Solomon", "Samuel"],
+                "answer": 0
+            },
+            {
+                "question": "What was Paul's name before conversion?",
+                "options": ["Peter", "Silas", "Saul", "Stephen"],
+                "answer": 2
+            },
+            {
+                "question": "Who helped Jesus carry His cross?",
+                "options": ["Peter", "Simon of Cyrene", "John", "Joseph"],
+                "answer": 1
+            },
+            {
+                "question": "What is the fruit of the Spirit?",
+                "options": ["Joy, Peace, Anger", "Love, Joy, Peace", "Faith, Hate, Envy", "Love, Fear, Sadness"],
+                "answer": 1
+            },
+            {
+                "question": "What is the greatest love verse?",
+                "options": ["Psalm 23", "John 3:16", "Romans 8:28", "Genesis 1:1"],
+                "answer": 1
+            },
+            {
+                "question": "Who saw a burning bush?",
+                "options": ["Joshua", "David", "Moses", "Abraham"],
+                "answer": 2
+            },
+            {
+                "question": "What book is full of songs and poems?",
+                "options": ["Proverbs", "Psalms", "Ecclesiastes", "Job"],
+                "answer": 1
+            },
+            {
+                "question": "Who walked on water besides Jesus?",
+                "options": ["John", "James", "Peter", "Paul"],
+                "answer": 2
+            },
+            {
+                "question": "What is the golden rule?",
+                "options": ["Pray daily", "Be kind", "Do to others what you'd want done to you", "Love money"],
+                "answer": 2
+            },
+            {
+                "question": "Who was the first murderer?",
+                "options": ["Cain", "Esau", "Abel", "Lamech"],
+                "answer": 0
+            },
+            {
+                "question": "What killed Goliath?",
+                "options": ["Sword", "Arrow", "Stone", "Fire"],
+                "answer": 2
+            },
+            {
+                "question": "What did God turn Lot's wife into?",
+                "options": ["Ice", "Sand", "Salt", "Stone"],
+                "answer": 2
+            },
+            {
+                "question": "What animal spoke to Balaam?",
+                "options": ["Horse", "Donkey", "Camel", "Goat"],
+                "answer": 1
+            },
+            {
+                "question": "Who interpreted dreams in Egypt?",
+                "options": ["Daniel", "Joseph", "Moses", "Aaron"],
+                "answer": 1
+            },
+            {
+                "question": "Who killed Abel?",
+                "options": ["Seth", "Lamech", "Cain", "Adam"],
+                "answer": 2
+            },
+            {
+                "question": "What did God create on day six?",
+                "options": ["Sun", "Man and animals", "Land", "Sky"],
+                "answer": 1
+            },
+            {
+                "question": "Who built a giant boat?",
+                "options": ["Moses", "Jonah", "Noah", "Paul"],
+                "answer": 2
+            },
+            {
+                "question": "What did Jesus do at the temple as a boy?",
+                "options": ["Played", "Preached", "Got lost", "Healed"],
+                "answer": 1
+            },
+            {
+                "question": "Who was swallowed by a fish?",
+                "options": ["Jonah", "Peter", "Job", "Paul"],
+                "answer": 0
+            },
+            {
+                "question": "How many days was Jesus in the tomb?",
+                "options": ["1", "2", "3", "4"],
+                "answer": 2
+            },
+            {
+                "question": "What does 'gospel' mean?",
+                "options": ["Command", "Holy Word", "Good news", "Praise"],
+                "answer": 2
+            },
+            {
+                "question": "What is the first book of the Bible?",
+                "options": ["Psalms", "Genesis", "Matthew", "Exodus"],
+                "answer": 1
+            },
+            {
+                "question": "What is the last book of the Bible?",
+                "options": ["Revelation", "Romans", "John", "Acts"],
+                "answer": 0
+            },
+            {
+                "question": "How many wise men visited Jesus?",
+                "options": ["2", "3", "Not specified", "5"],
+                "answer": 2
+            },
+            {
+                "question": "Who wrote the book of Revelation?",
+                "options": ["Paul", "Peter", "John", "James"],
+                "answer": 2
+            },
+            {
+                "question": "What book tells of Jesus' birth?",
+                "options": ["Matthew", "Mark", "John", "Acts"],
+                "answer": 0
+            },
+            {
+                "question": "Who was the oldest man in the Bible?",
+                "options": ["Adam", "Noah", "Methuselah", "Abraham"],
+                "answer": 2
+            },
+            {
+                "question": "What is sin?",
+                "options": ["Doing good", "Obeying God", "Disobeying God", "Reading"],
+                "answer": 2
+            },
+            {
+                "question": "What was the first plague of Egypt?",
+                "options": ["Frogs", "Locusts", "Darkness", "Water to blood"],
+                "answer": 3
+            },
+            {
+                "question": "Who did God give the rainbow to?",
+                "options": ["Moses", "Adam", "Noah", "David"],
+                "answer": 2
+            },
+            {
+                "question": "What did Jesus use to teach?",
+                "options": ["Parables", "Psalms", "Lectures", "Dreams"],
+                "answer": 0
+            },
+            {
+                "question": "What's another name for the devil?",
+                "options": ["Angel", "Satan", "Jesus", "Elijah"],
+                "answer": 1
+            },
+            {
+                "question": "Who was the tax collector that followed Jesus?",
+                "options": ["Peter", "Paul", "Matthew", "Mark"],
+                "answer": 2
+            },
+            {
+                "question": "What is the Bible?",
+                "options": ["Just a story", "God's Word", "A fairy tale", "Old laws"],
+                "answer": 1
             }
-          ];
+        ];
 
         // Convert 'answer' property to 'correct' for compatibility
         this.quizData = sampleData.map(question => ({
