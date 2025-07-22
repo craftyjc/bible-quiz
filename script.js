@@ -783,7 +783,7 @@ class QuizApp {
         
         // Display appropriate text based on mode
         if (isClue) {
-            document.getElementById('question-text').textContent = `🔍 Find the Bible character: "${questionText}"`;
+            document.getElementById('question-text').textContent = `🔍 Find me: "${questionText}"`;
         } else {
             document.getElementById('question-text').textContent = questionText;
         }
@@ -819,8 +819,8 @@ class QuizApp {
         const allButtons = document.querySelectorAll('.option-btn');
         allButtons.forEach(btn => btn.disabled = true);
         
-        // Check if answer is correct
-        if (selectedIndex === correctIndex) {
+        // Check if answer is correct (ensure both are numbers for comparison)
+        if (Number(selectedIndex) === Number(correctIndex)) {
             selectedButton.classList.add('correct');
             this.correctAnswers++;
             this.showFeedback('Correct! 🎉', 'success');
@@ -830,6 +830,9 @@ class QuizApp {
             this.wrongAnswers++;
             this.showFeedback('Wrong answer! 😞', 'error');
         }
+        
+        // Debug logging (remove in production)
+        console.log(`Question ${this.currentQuestionIndex + 1}: Selected=${selectedIndex}, Correct=${correctIndex}, Correct Count=${this.correctAnswers}, Wrong Count=${this.wrongAnswers}`);
         
         // Update score display
         this.updateScore();
@@ -898,12 +901,14 @@ class QuizApp {
     }
 
     showResults() {
-        const percentage = Math.round((this.correctAnswers / this.totalQuestions) * 100);
+        // Use actual questions answered instead of total questions to ensure math adds up
+        const questionsAnswered = this.correctAnswers + this.wrongAnswers;
+        const percentage = questionsAnswered > 0 ? Math.round((this.correctAnswers / questionsAnswered) * 100) : 0;
         
         document.getElementById('score-percentage').textContent = `${percentage}%`;
         document.getElementById('final-correct').textContent = this.correctAnswers;
         document.getElementById('final-wrong').textContent = this.wrongAnswers;
-        document.getElementById('final-total').textContent = this.totalQuestions;
+        document.getElementById('final-total').textContent = questionsAnswered;
         
         this.showScreen('results-screen');
     }
