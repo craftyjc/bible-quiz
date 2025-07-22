@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Application</title>
+    <title>Rapid Fire Bible Quiz</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,16 +12,23 @@
         <!-- Setup Screen -->
         <div id="setup-screen" class="screen active">
             <div class="setup-card">
-                <h1>🧠 Quiz Master</h1>
-                <p>Test your knowledge with our interactive quiz!</p>
+                <h1>🧠 Bible Quiz Master</h1>
+                <p>Test your Bible knowledge with our interactive quiz!</p>
                 
                 <div class="setup-form">
+                    <label for="quiz-mode">Quiz Mode:</label>
+                    <select id="quiz-mode">
+                        <option value="regular">📖 Regular Bible Quiz (100 Questions)</option>
+                        <option value="clues">🔍 Find Bible Character from One Clue (30 Questions)</option>
+                    </select>
+                    
                     <label for="quiz-count">Number of questions:</label>
                     <select id="quiz-count">
                         <option value="5">5 Questions</option>
                         <option value="10" selected>10 Questions</option>
                         <option value="15">15 Questions</option>
                         <option value="20">20 Questions</option>
+                        <option value="30">30 Questions</option>
                         <option value="all">All Questions</option>
                     </select>
                     

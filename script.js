@@ -3,25 +3,28 @@
 class QuizApp {
     constructor() {
         this.quizData = [];
+        this.clueData = [];
         this.currentQuestionIndex = 0;
         this.correctAnswers = 0;
         this.wrongAnswers = 0;
         this.totalQuestions = 0;
         this.selectedQuestions = [];
         this.hasAnswered = false;
+        this.quizMode = 'regular'; // 'regular' or 'clues'
         
         this.init();
     }
 
     init() {
         this.bindEvents();
-        this.loadSampleData(); // Load sample data from JSON file
+        this.loadRegularQuizData(); // Load regular quiz data
+        this.loadClueData(); // Load clue-based questions
     }
 
-        // Load sample quiz data
-    loadSampleData() {
+        // Load regular biblical quiz data
+    loadRegularQuizData() {
         // 100 Biblical quiz questions
-        const sampleData = [
+        const regularQuizQuestions = [
             {
                 "question": "Who built an ark to survive the flood?",
                 "options": ["Moses", "Noah", "Abraham", "David"],
@@ -525,12 +528,176 @@ class QuizApp {
         ];
 
         // Convert 'answer' property to 'correct' for compatibility
-        this.quizData = sampleData.map(question => ({
+        this.quizData = regularQuizQuestions.map(question => ({
             ...question,
             correct: question.answer
         }));
         
         console.log('Biblical quiz data loaded successfully:', this.quizData.length, 'questions');
+    }
+
+    // Load clue-based character questions
+    loadClueData() {
+        const characterClueQuestions = [
+            {
+                "clue": "Ark builder",
+                "options": ["Abraham", "Moses", "Noah", "Adam"],
+                "answer": 2
+            },
+            {
+                "clue": "Killed Goliath",
+                "options": ["Saul", "David", "Solomon", "Jonathan"],
+                "answer": 1
+            },
+            {
+                "clue": "First woman",
+                "options": ["Mary", "Sarah", "Eve", "Rachel"],
+                "answer": 2
+            },
+            {
+                "clue": "Led Israelites out of Egypt",
+                "options": ["Aaron", "Joseph", "Moses", "Joshua"],
+                "answer": 2
+            },
+            {
+                "clue": "Denied Jesus three times",
+                "options": ["Paul", "Judas", "Peter", "John"],
+                "answer": 2
+            },
+            {
+                "clue": "Swallowed by a great fish",
+                "options": ["Elijah", "Jonah", "Daniel", "Paul"],
+                "answer": 1
+            },
+            {
+                "clue": "First man",
+                "options": ["Adam", "Cain", "Noah", "Seth"],
+                "answer": 0
+            },
+            {
+                "clue": "Jesus' mother",
+                "options": ["Elizabeth", "Rachel", "Martha", "Mary"],
+                "answer": 3
+            },
+            {
+                "clue": "Known for strength",
+                "options": ["David", "Samson", "Saul", "Esau"],
+                "answer": 1
+            },
+            {
+                "clue": "Father of many nations",
+                "options": ["Isaac", "Jacob", "Abraham", "Joseph"],
+                "answer": 2
+            },
+            {
+                "clue": "Interpreter of dreams in Egypt",
+                "options": ["Daniel", "Joseph", "Moses", "Nehemiah"],
+                "answer": 1
+            },
+            {
+                "clue": "Betrayed Jesus",
+                "options": ["Peter", "Thomas", "Judas", "James"],
+                "answer": 2
+            },
+            {
+                "clue": "Walked on water",
+                "options": ["Peter", "Jesus", "John", "Paul"],
+                "answer": 0
+            },
+            {
+                "clue": "Gave birth at old age",
+                "options": ["Ruth", "Sarah", "Leah", "Rebecca"],
+                "answer": 1
+            },
+            {
+                "clue": "Brother of Moses",
+                "options": ["Joseph", "Aaron", "Jacob", "Esau"],
+                "answer": 1
+            },
+            {
+                "clue": "Wrote many Psalms",
+                "options": ["Solomon", "Moses", "David", "Isaiah"],
+                "answer": 2
+            },
+            {
+                "clue": "Queen who saved her people",
+                "options": ["Deborah", "Esther", "Ruth", "Bathsheba"],
+                "answer": 1
+            },
+            {
+                "clue": "Known for wisdom",
+                "options": ["Solomon", "David", "Moses", "Elisha"],
+                "answer": 0
+            },
+            {
+                "clue": "Climbed a sycamore tree",
+                "options": ["Nicodemus", "Zacchaeus", "Thomas", "Philip"],
+                "answer": 1
+            },
+            {
+                "clue": "Jesus raised him from the dead",
+                "options": ["Lazarus", "Stephen", "John", "Jairus"],
+                "answer": 0
+            },
+            {
+                "clue": "Known for doubting",
+                "options": ["Judas", "Peter", "Thomas", "Andrew"],
+                "answer": 2
+            },
+            {
+                "clue": "Known as the weeping prophet",
+                "options": ["Isaiah", "Jeremiah", "Ezekiel", "Micah"],
+                "answer": 1
+            },
+            {
+                "clue": "Father of John the Baptist",
+                "options": ["Zechariah", "Joseph", "Simeon", "Cornelius"],
+                "answer": 0
+            },
+            {
+                "clue": "Interpreter of dreams in Babylon",
+                "options": ["Joseph", "Daniel", "Ezekiel", "Ezra"],
+                "answer": 1
+            },
+            {
+                "clue": "Led the Israelites into the Promised Land",
+                "options": ["Moses", "Aaron", "Joshua", "Caleb"],
+                "answer": 2
+            },
+            {
+                "clue": "Jesus' cousin",
+                "options": ["James", "Lazarus", "John the Baptist", "Simon"],
+                "answer": 2
+            },
+            {
+                "clue": "She gleaned in Boaz's field",
+                "options": ["Hannah", "Ruth", "Esther", "Miriam"],
+                "answer": 1
+            },
+            {
+                "clue": "Saw a burning bush",
+                "options": ["Elijah", "Moses", "Abraham", "Aaron"],
+                "answer": 1
+            },
+            {
+                "clue": "Built the temple",
+                "options": ["David", "Solomon", "Nehemiah", "Saul"],
+                "answer": 1
+            },
+            {
+                "clue": "Visited Jesus at night",
+                "options": ["Nicodemus", "Thomas", "Zacchaeus", "Philip"],
+                "answer": 0
+            }
+        ];
+
+        // Convert 'answer' property to 'correct' for compatibility
+        this.clueData = characterClueQuestions.map(question => ({
+            ...question,
+            correct: question.answer
+        }));
+        
+        console.log('Biblical clue data loaded successfully:', this.clueData.length, 'questions');
     }
 
     // Load custom quiz data from JSON
@@ -565,18 +732,27 @@ class QuizApp {
 
     startQuiz() {
         const quizCount = document.getElementById('quiz-count').value;
+        const quizMode = document.getElementById('quiz-mode').value;
         
-        if (this.quizData.length === 0) {
+        // Set quiz mode
+        this.quizMode = quizMode;
+        
+        // Select appropriate question dataset
+        const questionData = quizMode === 'clues' ? this.clueData : this.quizData;
+        
+        if (questionData.length === 0) {
             alert('No quiz data available. Please load questions first.');
             return;
         }
         
         // Prepare selected questions
         if (quizCount === 'all') {
-            this.selectedQuestions = [...this.quizData];
+            this.selectedQuestions = [...questionData];
         } else {
             const count = parseInt(quizCount);
-            this.selectedQuestions = this.shuffleArray([...this.quizData]).slice(0, count);
+            // Limit count to available questions for clue mode
+            const maxCount = quizMode === 'clues' ? Math.min(count, questionData.length) : count;
+            this.selectedQuestions = this.shuffleArray([...questionData]).slice(0, maxCount);
         }
         
         this.totalQuestions = this.selectedQuestions.length;
@@ -601,9 +777,19 @@ class QuizApp {
     loadQuestion() {
         const question = this.selectedQuestions[this.currentQuestionIndex];
         
-        document.getElementById('question-text').textContent = question.question;
+        // Handle both question and clue formats
+        const questionText = question.question || question.clue;
+        const isClue = this.quizMode === 'clues';
+        
+        // Display appropriate text based on mode
+        if (isClue) {
+            document.getElementById('question-text').textContent = `🔍 Find the Bible character: "${questionText}"`;
+        } else {
+            document.getElementById('question-text').textContent = questionText;
+        }
+        
         document.getElementById('question-counter').textContent = 
-            `Question ${this.currentQuestionIndex + 1} of ${this.totalQuestions}`;
+            `${isClue ? 'Clue' : 'Question'} ${this.currentQuestionIndex + 1} of ${this.totalQuestions}`;
         
         const optionButtons = document.querySelectorAll('.option-btn');
         optionButtons.forEach((btn, index) => {
