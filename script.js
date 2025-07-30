@@ -601,7 +601,7 @@ class QuizApp {
             },
             {
                 "clue": "Walked on water",
-                "options": ["Peter", "Jesus", "John", "Paul"],
+                "options": ["Peter", "James", "John", "Paul"],
                 "answer": 0
             },
             {
